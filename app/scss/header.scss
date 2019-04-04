@@ -1,0 +1,95 @@
+@import "variables.scss";
+@import "colors.scss";
+@import "mixinies.scss";
+
+header {
+    display: block;
+	width: 100%;
+    height: 1000px;
+    background: url(../images/header/background.png) no-repeat;
+    background-size: contain;
+    color: $white;
+    z-index: 9999;
+}
+header a {
+    color: $white;
+}
+
+header .logo {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+header::before {
+	background-color: var($orange);
+	background-image: linear-gradient(to top, rgba(252, 227, 138, 0.9) 0%, rgba(243, 129, 129, 0.9) 100%);
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1000px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:1;
+    opacity: 0.5;
+}
+header .menu {
+    padding: 10px 0;
+	text-transform: uppercase;
+}
+header .menu ul li {
+	list-style: none;
+}
+header .user-block {
+    padding: 10px 0;
+}
+
+header .header-text {
+    margin-top: 40px;
+    text-align: center;
+}
+header hr {
+    width: 60px;
+    height: 3px;
+    margin: 10px auto;
+    background-color: $white;
+}
+header button.learn-more {
+    background: transparent;
+    border: 2px solid $white;
+    color: $white;
+    font-size: 14px;
+    height: 40px;
+    padding: 0 5px;
+}
+header .header-text {
+    text-align: center;
+}
+header h1 {
+    margin: 30px auto 70px auto;
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 140px;
+    text-transform: uppercase;    
+}
+header h3 {
+    font-size: 72px;
+    font-weight: 400;
+    font-family: $font-kaushan;
+}
+
+header .header-timeline {
+    text-transform: lowercase;
+    /*height: 17px;*/
+    font-size: 18px;
+    font-weight: 400;
+    margin: 50px auto 0;
+}
+
+header .header-timeline li {
+    width: 200px;
+    margin: 0 5px;
+    padding: 5px 0;
+    border-top: 2px solid $white;
+}
