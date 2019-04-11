@@ -21,6 +21,18 @@ function getCount(param){
 	return 0;
 }
 
+function getCount2(data){
+	if (typeof data == 'object'){
+		let c = 0;
+		for (let i in data){
+			++c;
+		}
+		return c;
+	}
+	return 0;//function, other types
+}
+
+
 var test1 = {a:1, b:2, c:3};
 console.log(getCount(test1));
 var test2 = function(){};
