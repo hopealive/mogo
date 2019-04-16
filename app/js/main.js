@@ -60,6 +60,42 @@ var cat = {
 //console.log( animals.toString );
 
 
+//console.dir([1,2,3]);
+//наследование
+
+//function Human(name) {
+//    this.name = name;
+//    this.age = 0;
+//}
+//Human.prototype.increase = function(age) {
+//    this.age += age;
+//    console.log( this.name + ' выроc на ' + this.age + ' годиков' );
+//};
+//
+//Human.prototype.born = function() {
+//    this.age = 0;
+//    console.log( this.name + ' родился. Возраст: '+this.age );
+//};
+//
+//function Student(name){
+//    this.name = name;
+//    this.age = 0;
+//}
+//
+//Student.prototype = Object.create(Human.prototype);
+//
+//Student.prototype.fastIncrease = function(){
+//    this.age++;
+//    console.log(this.name + ' уже стар как только стал студентом. Возраст уже: ' +this.age );
+//}
+//Student.prototype.constructor = Student;
+//
+//
+//var vasya = new Student('Вася');
+//vasya.born();
+//vasya.increase(16);
+//vasya.fastIncrease();
+
 //console.log (new Date());
 //console.log (new Date(1234567890123)); //new Date(value);
 //console.log (new Date("2019-01-01")); //new Date(dateString);
