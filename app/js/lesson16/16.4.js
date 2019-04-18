@@ -1,7 +1,7 @@
 /*
 * 2019-04-07
 * @gregzorb
-* lesson 14
+* lesson 16
 * Task 4
 * 
 * Также дописать функцию pick(counter, x) которая вызвает 
