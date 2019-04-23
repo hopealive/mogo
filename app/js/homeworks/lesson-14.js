@@ -6,13 +6,14 @@
 */
 'use strict';
 
-var obj = {a: 'Ananas', b: 21, c: { d: 'Oksana' }};
-//var cObj = Object.assign({}, obj);
+// var obj = {a: 'Ananas', b: 21, c: { d: 'Oksana' }};
+var obj = {a: 'Ananas', b: 21};
+var cObj = Object.assign({}, obj);
 
-//cObj.a = 'Banan';
+cObj.a = 'Banan';
 //cObj.c.d = 'Vasya';
-//console.log ( obj );
-//console.log ( cObj );
+console.log ( obj );
+console.log ( cObj );
 //
 //var cObj = {};
 
