@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AJAX</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="block"></div>
+        <script>
+            function getImageByClassicMethod() {
+                var xhttp = new XMLHttpRequest();
+                var url, image;
+                xhttp.onreadystatechange = function () {
+//                console.log(xhttp.readyState); //https://developer.mozilla.org/ru/docs/Web/API/XMLHttpRequest/readyState
+//                console.log(xhttp.status);
+                    if (xhttp.readyState == 4 && xhttp.status == 200) {
+                        url = JSON.parse(xhttp.responseText).message;
+                        image = document.createElement("img");
+                        image.src = url;
+                        document.getElementById("block").appendChild(image);
+                    }
+                };
+                xhttp.open("GET", "http://127.0.0.1:3000/image.json", true);
+//            xhttp.open("GET", "http://dog.ceo/api/breeds/image/random", true);
+                xhttp.send();
+            }
+
+            function getImageByFetch() {
+                let promise = fetch('http://127.0.0.1:3000/image.json')
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    url = data.message;
+                    image = document.createElement("img");
+                    image.src = url;
+                    document.getElementById("block").appendChild(image);
+                })
+                .catch( alert );
+            }
+
+            function promiseExample() {
+                let result = true;
+                let promise = new Promise(function(resolve, reject){
+                    if ( result ){
+                        setTimeout(function(){
+                            console.log ( 'good promiseExample for 1 sec' );
+                        }, 1000);
+                        resolve("result");
+                    } else {
+                        console.log ( 'bad promiseExample' );
+                        resolve("reject");
+                    }
+                });
+
+                promise
+                    .then(
+                        function(result) {
+                          console.log("Fulfilled: " + result); // result - аргумент resolve
+                        },
+                        function(error) {
+                          console.log("Rejected: " + error); // error - аргумент reject
+                        }
+                );
+            }
+
+//            getImageByClassicMethod();
+//            getImageByFetch();
+promiseExample();
+
+
+
+        </script>
+    </body>
+</html>
